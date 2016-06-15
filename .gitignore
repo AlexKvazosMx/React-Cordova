@@ -1,0 +1,15 @@
+# System
+.DS_Store
+
+# Node & NPM
+node_modules/
+logs/
+*.log
+
+# Ionic
+platforms/
+plugins/
+www/
+
+# Exclude
+!.gitignore

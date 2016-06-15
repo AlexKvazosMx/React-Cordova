@@ -1,5 +1,22 @@
 var webpack = require('webpack');
 var WebPackDevServer = require('webpack-dev-server');
+var winston = require('winston');
+var os = require('os');
+var interfaces = os.networkInterfaces();
+var addresses = [];
+for (var k in interfaces) {
+    for (var k2 in interfaces[k]) {
+        var address = interfaces[k][k2];
+        if (address.family === 'IPv4' && !address.internal) {
+            addresses.push(address.address);
+        }
+    }
+}
+var logger = new winston.Logger({
+  transports: [
+    new winston.transports.Console({ colorize: true })
+  ]
+});
 
 /******************************************************
  * Webpack Dev Server
@@ -33,6 +50,13 @@ var WebPackDevServerConf = {
   },
   headers: config.devServer.headers
 };
+
+logger.info('================[ Webpack Dev Server ]================');
+logger.info(`${config.devServer.contentBase}`);
+logger.info('');
+logger.info(`Server running on: ${config.devServer.host}:${config.devServer.port}`);
+logger.info(`LAN Address: ${addresses[0]}:${config.devServer.port}`);
+logger.info('======================================================\n');
 
 // Create the webpack dev server by wrapping the compiler and the server config
 var devServer = new WebPackDevServer(compiler, WebPackDevServerConf);

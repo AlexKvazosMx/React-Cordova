@@ -44,7 +44,8 @@ var config = {
      { from: path.join(__dirname, '../resources'), to: path.join(__dirname, '../www/resources') }
    ]),
    new HtmlWebpackPlugin({
-     template: path.join(__dirname, '../src/index.html')
+     template: path.join(__dirname, '../src/index.html'),
+     inject: false
    }),
    new webpack.optimize.OccurenceOrderPlugin(),
    new ExtractTextPlugin(`style.css`)

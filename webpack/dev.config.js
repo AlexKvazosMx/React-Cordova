@@ -29,7 +29,8 @@ var config = {
     { copyUnmodified: true }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, '../src/index.html')
+      template: path.join(__dirname, '../src/index.html'),
+      inject: false
     }),
     new webpack.DefinePlugin({
       'process.env': {

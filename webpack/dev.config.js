@@ -44,7 +44,7 @@ var config = {
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['react-hot', 'babel-loader'] },
-      { test: /\.less$/, loaders: ['style-loader', 'css-loader', 'less-loader'] }
+      { test: /\.less$/, loaders: ['style-loader', 'css-loader?-url,-import', 'less-loader'] }
     ]
   },
 

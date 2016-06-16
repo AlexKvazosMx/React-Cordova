@@ -54,7 +54,7 @@ var config = {
   module: {
     loaders: [
       { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' },
-      { test: /\.less$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader') }
+      { test: /\.less$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?-url,-import!less-loader') }
     ]
   }
 

@@ -5,5 +5,13 @@ import router from './router';
  * Client entry point
  */
 
-const node = document.querySelector('#app');
-render(router, node);
+ if (global.cordova) {
+   document.addEventListener('deviceready', init, false);
+ } else {
+   init();
+ }
+
+ function init() {
+   const node = document.querySelector('#app');
+   render(router, node);
+ }

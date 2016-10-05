@@ -31,7 +31,7 @@
     "cordova-splash": "^0.7.1",
     "css-loader": "^0.23.1",
     "eslint": "^2.12.0",
-    "eslint-plugin-react": "^5.1.1",
+    "eslint-plugin-react": "^6.3.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.21.0",
     "less": "^2.7.1",
